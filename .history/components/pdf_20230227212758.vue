@@ -34,7 +34,7 @@ export default {
      vuePdf: null
    }
 	},
-	mounted() {
+	created() {
 		if (process.client) {
 			console.log(process.client,'半段')
 					this.vuePdf = require('vue-pdf')
@@ -43,7 +43,7 @@ export default {
 	},
 	methods: {
 		pdfLoadTask () {
-		this.pdfUrl = this.vuePdf.default.createLoadingTask('http://127.0.0.1:5500/static/dome/CCF_000002.pdf')
+		this.pdfUrl = this.vuePdf.default.createLoadingTask('http://127.0.0.1:5500/'+this.url)
 		this.pdfUrl.promise.then(pdf => {
 				this.numPages = pdf.numPages;
 				console.log(this.numPages,'页码')

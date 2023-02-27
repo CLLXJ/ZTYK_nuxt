@@ -43,7 +43,9 @@ export default {
 	},
 	methods: {
 		pdfLoadTask () {
-		this.pdfUrl = this.vuePdf.default.createLoadingTask('http://127.0.0.1:5500/static/dome/CCF_000002.pdf')
+			console.log('http://127.0.0.1:5500'+this.url)
+		this.pdfUrl = this.vuePdf.default.createLoadingTask('http://127.0.0.1:5500'+this.url)
+		debugger
 		this.pdfUrl.promise.then(pdf => {
 				this.numPages = pdf.numPages;
 				console.log(this.numPages,'页码')

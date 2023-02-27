@@ -35,7 +35,7 @@ export default {
       }
     } 
   },
-  created(){
+  mounted(){
     // async asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
       console.log(this.$router.history.current.query)
       this.indexID=this.$router.history.current.query

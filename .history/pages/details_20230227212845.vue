@@ -3,7 +3,7 @@
     <Top></Top>
     <div  class="content">
       <div class="title">{{productData.xmname}}</div>
-      <pdf :url ="productData.xmwj"></pdf>
+      <Ftp :filePath ="productData.xmwj"></Ftp>
     </div>
     <Bottom></Bottom>
   </div>
@@ -12,13 +12,13 @@
 <script>
 import Top from '~/components/Navigation.vue'
 import Bottom from '~/components/BottomNavigation.vue'
-import pdf from '~/components/pdf.vue'
+import Ftp from '~/components/pdf.vue'
 import {mapState,mapMutations} from "vuex";
 export default {
   components:{
     Top,
     Bottom,
-    pdf
+    Ftp
   },
   computed:{
     ...mapState(["Xmdata_x"])
@@ -35,7 +35,7 @@ export default {
       }
     } 
   },
-  created(){
+  mounted(){
     // async asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
       console.log(this.$router.history.current.query)
       this.indexID=this.$router.history.current.query

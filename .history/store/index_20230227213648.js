@@ -18,7 +18,7 @@ export const state = {
 			xmtd:"开放融合、智能联动、数据至慧",
 			xmjj:"为实现智慧校园中各类软件、硬件系统的智能联动、数据融合、高效运行，元素科技自主研发一套元素智慧校园中心平台（简称中心平台），通过盖平台可助力学习实现信息技术玉教育教学深度融合，达到提高教学质量、提升管理效率、促进家校共育的目的。",//项目简介
 			xmsyt:"/static/gswh04.jpg",//项目首页图路径
-			xmwj:'/static/dome/CCF_000002.pdf'
+			xmwj:'/static/demo/CCF_000002.pdf'
 		},
 	],
 	// indexShowLinks: false
