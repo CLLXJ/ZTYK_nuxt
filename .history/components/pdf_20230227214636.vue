@@ -3,10 +3,19 @@
   
     margin-top: 100px;
     background-color: whitesmoke;">
+		<!-- <vue-pdf  :src="pdfUrl"></vue-pdf>  -->
 		<vue-pdf :src="pdfUrl"  v-for="i in numPages"
 		:key="i"
 		:page="i"></vue-pdf>   
 	</div>
+			<!-- <client-only>
+					<vue-pdf class="your-pdf-class" :src="pdfSrc" :page="1" @num-pages="pdfPageCount = $event"></vue-pdf>
+					<div v-if="pdfPageCount > 1">
+							<div v-for="(pageNum, index) in pdfPageCount " :key="index">
+									<vue-pdf class="your-pdf-class" :src="pdfSrc" :page="pageNum" v-if="pageNum > 1"></vue-pdf>
+							</div>
+					</div>
+			</client-only> -->
 </template>
 <script>
 
@@ -30,12 +39,14 @@ export default {
 	},
 	mounted() {
 		if (process.client) {
+			// console.log(process.client,'半段')
 					this.vuePdf = require('vue-pdf')
 					this.pdfLoadTask() 
 				}
 	},
 	methods: {
 		pdfLoadTask () {
+			console.log('http://127.0.0.1:5500'+this.url)
 		this.pdfUrl = this.vuePdf.default.createLoadingTask('http://127.0.0.1:5500'+this.url)
 		debugger
 		this.pdfUrl.promise.then(pdf => {
